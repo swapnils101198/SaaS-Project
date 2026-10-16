@@ -160,52 +160,7 @@ git push -u origin feature/your-feature-name
 
 ---
 
-## 7. Project Directory Structure
-
-```text
-sample-fullstack-app/
-├── package.json               # Common workspace orchestrator & scripts
-├── .gitignore                 # Root ignore for root, frontend, and backend
-├── README.md                  # Complete project manual & API reference
-├── backend/
-│   ├── vitest.config.ts       # Backend Vitest configuration
-│   ├── package.json           # Backend dependencies and scripts
-│   ├── tsconfig.json          # Strict TypeScript compiler options
-│   ├── .env                   # Local backend environment variables (PORT, FRONTEND_ORIGIN)
-│   ├── .env.example           # Example backend environment variables
-│   └── src/
-│       ├── types/             # API and Resource data contracts
-│       ├── services/          # Business logic, in-memory store & metrics
-│       ├── middleware/        # Security headers, rate limiting, validation, errors
-│       ├── controllers/       # HTTP request handlers
-│       ├── routes/            # Express route declarations
-│       ├── __tests__/         # 19 automated integration tests
-│       ├── app.ts             # Express app instance setup
-│       └── server.ts          # Server listener on port 3000
-└── frontend/
-    ├── index.html             # Vite HTML shell
-    ├── package.json           # Frontend dependencies and scripts
-    ├── vite.config.ts         # Vite server config (port 5300, strictPort)
-    ├── tsconfig.json          # TypeScript project references
-    ├── tsconfig.app.json      # React app TypeScript compiler options
-    ├── tsconfig.node.json     # Node/Vite TypeScript compiler options
-    ├── .env                   # Local frontend environment variables (VITE_API_URL)
-    ├── .env.example           # Example frontend environment variables
-    ├── public/
-    │   └── vite.svg           # Application favicon
-    └── src/
-        ├── types/             # Shared frontend data contracts
-        ├── services/          # Typed API clients with AbortSignal timeouts
-        ├── components/        # Accessible UI components (Header, Metrics, Cards, Modals)
-        ├── App.tsx            # Main application dashboard
-        ├── main.tsx           # React root entrypoint
-        ├── index.css          # Responsive design system
-        └── vite-env.d.ts      # Vite client type declarations
-```
-
----
-
-## 8. API Reference
+## 7. API Reference
 
 | Method | Endpoint | Description | Request Body / Query Params | Status Code |
 | :--- | :--- | :--- | :--- | :--- |
@@ -221,23 +176,6 @@ sample-fullstack-app/
 | `POST` | `/api/resources/:id/ping`| Ping test service | None | `200 OK` / `404 Not Found` |
 
 ---
-
-## 9. Troubleshooting & FAQ
-
-### Port 5300 is already in use
-Vite is configured with `strictPort: true`. It will terminate with an error rather than silently switching ports.
-Find and stop the conflicting process:
-```bash
-lsof -i :5300
-kill -9 <PID>
-```
-
-### Port 3000 is already in use
-Find and stop the conflicting process:
-```bash
-lsof -i :3000
-kill -9 <PID>
-```
 
 ### CORS Errors
 Ensure `FRONTEND_ORIGIN` in `backend/.env` is set to `http://localhost:5300` and `VITE_API_URL` in `frontend/.env` points to `http://localhost:3000`.
