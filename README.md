@@ -1,6 +1,6 @@
 # APIPulse — Developer Service & API Resource Manager
 
-**Project Name:** `APIPulse` (`sample-fullstack-app`)  
+**Project Name:** `APIPulse` (`SaaS-Project`)  
 **Version:** `1.0.0`  
 **License:** MIT  
 **Tech Stack:** React 18, TypeScript, Vite 6, Node.js (>= 18), Express 4  
@@ -89,7 +89,7 @@ npm run test
 
 ## 5. Git Repository Operations
 
-**Repository Name:** `sample-fullstack-app`  
+**Repository Name:** `SaaS-Project`  
 **Default Branch:** `main`
 
 ### Initialize and Connect Remote
@@ -99,7 +99,7 @@ git init
 git branch -m main
 
 # Add remote repository URL (replace with your git remote URL)
-git remote add origin https://github.com/<your-username>/sample-fullstack-app.git
+git remote add origin https://github.com/<your-username>/SaaS-Project.git
 ```
 
 ### Pulling Changes (`git pull`)
